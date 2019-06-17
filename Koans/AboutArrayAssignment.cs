@@ -12,41 +12,41 @@ namespace DotNetCoreKoans.Koans
     //This isn't available in C#, but there are a few interesting assignment
     //tricks we can pick up.
 
-    // [Step(1)]
-    // public void ImplicitAssignment()
-    // {
-    //   //Even though we don't specify types explicitly, the compiler
-    //   //will pick one for us
-    //   var name = "John";
-    //   Assert.Equal(typeof(string), name.GetType());
+    [Step(1)]
+    public void ImplicitAssignment()
+    {
+      //Even though we don't specify types explicitly, the compiler
+      //will pick one for us
+      var name = "John";
+      Assert.Equal(typeof(string), name.GetType());
 
-    //   //but only if it can. So this doesn't work
-    //   //var array = null;
+      //but only if it can. So this doesn't work
+      //var array = null;
 
-    //   //It also knows the type, so once the above is in place, this doesn't work:
-    //   //name = 42;
-    // }
+      //It also knows the type, so once the above is in place, this doesn't work:
+      //name = 42;
+    }
 
-    // [Step(2)]
-    // public void ImplicitArrayAssignmentWithSameTypes()
-    // {
-    //   //Even though we don't specify types explicitly, the compiler
-    //   //will pick one for us
-    //   var names = new[] { "John", "Smith" };
-    //   Assert.Equal(typeof(string), names.GetType());
+    [Step(2)]
+    public void ImplicitArrayAssignmentWithSameTypes()
+    {
+      //Even though we don't specify types explicitly, the compiler
+      //will pick one for us
+      var names = new[] { "John", "Smith" };
+      Assert.Equal(typeof(string), names.GetType());
 
-    //   //but only if it can. So this doesn't work
-    //   //var array = new[] { "John", 1 };
-    // }
+      //but only if it can. So this doesn't work
+      //var array = new[] { "John", 1 };
+    }
 
-    // [Step(3)]
-    // public void MultipleAssignmentsOnSingleLine()
-    // {
-    //   //You can do multiple assignments on one line, but you 
-    //   //still have to be explicit
-    //   string firstName = "John", lastName = "Smith";
-    //   Assert.Equal(typeof(string), firstName.GetType());
-    //   Assert.Equal(typeof(string), lastName.GetType());
-    // }
+    [Step(3)]
+    public void MultipleAssignmentsOnSingleLine()
+    {
+      //You can do multiple assignments on one line, but you 
+      //still have to be explicit
+      string firstName = "John", lastName = "Smith";
+      Assert.Equal(typeof(string), firstName.GetType());
+      Assert.Equal(typeof(string), lastName.GetType());
+    }
   }
 }

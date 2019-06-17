@@ -176,7 +176,7 @@ namespace DotNetCoreKoans.Koans
             {
                 list[i] = (list[i].ToUpper());
             }
-            Assert.Equal(list, list);
+            Assert.Equal(new List<string> {"FISH", "AND", "CHIPS"}, list);
         }
 
         [Step(14)]
@@ -188,8 +188,8 @@ namespace DotNetCoreKoans.Koans
             {
                 finalList.Add(item.ToUpper());
             }
-            Assert.Equal(list, list);
-            Assert.Equal(finalList, finalList);
+            Assert.Equal(new List<string> { "fish", "and", "chips" }, list);
+            Assert.Equal(new List<string> { "FISH", "AND", "CHIPS" }, finalList);
         }
 
         [Step(15)]
