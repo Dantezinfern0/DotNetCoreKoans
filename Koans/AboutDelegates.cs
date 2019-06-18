@@ -32,40 +32,40 @@ namespace DotNetCoreKoans.Koans
 		[Step(1)]
 		public void DelegatesAreReferenceTypes()
 		{
-			//If you don't initialize a delegate it will be a null value, just as any other refrence type.
+			//If you don't initialize a delegate it will be a null value, just as any other reference type.
 			BinaryOp op;
-			Assert.Null(FILL_ME_IN);
+			Assert.Null(null);
 		}
 		[Step(2)]
 		public void DelegatesCanBeInstantiated()
 		{
 			MyMath math = new MyMath();
 			BinaryOp op = new BinaryOp(math.Add);
-			Assert.Equal(FILL_ME_IN, op.GetMethodInfo().Name);
+			Assert.Equal("Add", op.GetMethodInfo().Name);
 		}
 		[Step(3)]
 		public void DelegatesCanBeAssigned()
 		{
 			MyMath math = new MyMath();
 			BinaryOp op = math.Add;
-			Assert.Equal(FILL_ME_IN, op.GetMethodInfo().Name);
+			Assert.Equal("Add", op.GetMethodInfo().Name);
 		}
 		[Step(4)]
 		public void DelegatesCanReferenceStaticMethods()
 		{
 			BinaryOp op = MyMath.Subtract;
-			Assert.Equal(FILL_ME_IN, op.GetMethodInfo().Name);
+			Assert.Equal("Subtract", op.GetMethodInfo().Name);
 		}
 		[Step(5)]
 		public void MethodsCalledViaDelegate()
 		{
 			MyMath math = new MyMath();
 			BinaryOp op = math.Add;
-			Assert.Equal(FILL_ME_IN, op(3,3));
+			Assert.Equal(6, op(3,3));
 		}
 		private void PassMeTheDelegate(BinaryOp passed)
 		{
-            Assert.Equal(FILL_ME_IN, passed(3,3));
+            Assert.Equal(6, passed(3,3));
         }
 		[Step(6)]
 		public void DelegatesCanBePassed()
