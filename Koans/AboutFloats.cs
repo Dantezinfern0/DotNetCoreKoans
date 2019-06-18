@@ -46,12 +46,12 @@ namespace DotNetCoreKoans.Koans
             //so you don't lose the extra information in your floating point value
         }
 
-        // [Step(5)]
-        // public void FloatsHaveLimitedMaximumAndMinimumValues()
-        // {
-        //     Assert.Equal(3.40282346638529E+38, 3.40282347E+38f);
-        //     Assert.Equal(-3.40282346638529E+38, -3.40282347E+38f);
-        // }
+        [Step(5)]
+        public void FloatsHaveLimitedMaximumAndMinimumValues()
+        {
+            Assert.Equal(3.40282346638529E+38f, 3.40282347E+38f);
+            Assert.Equal(-3.40282346638529E+38f, -3.40282347E+38f);
+        }
 
         [Step(6)]
         public void ValueLargerThanTheMaximumFloatThrows()
@@ -62,32 +62,32 @@ namespace DotNetCoreKoans.Koans
             });
         }
 
-        // [Step(7)]
-        // public void FloatsHaveLimitedPrecision()
-        // {
-        //     float sevenDigits = 0.9999999f;
-        //     float eightDigits = 0.99999999f;
+        [Step(7)]
+        public void FloatsHaveLimitedPrecision()
+        {
+            float sevenDigits = 0.9999999f;
+            float eightDigits = 0.99999999f;
         
-        //     Assert.Equal(sevenDigits, 0.9999999);
-        //     Assert.Equal(eightDigits, 0.9999999);
+            Assert.Equal(sevenDigits, 0.99999988079071f);
+            Assert.Equal(eightDigits, 1f);
 
-        //     //Remember how floats are "Single Precision"?
-        //     //What does that actually mean?
-        //     //It means that they are actually only precisely accurate up to 7 significant digits,
-        //     //because they only use so much memory (32 bits) to store their value and decimal position.
+            //Remember how floats are "Single Precision"?
+            //What does that actually mean?
+            //It means that they are actually only precisely accurate up to 7 significant digits,
+            //because they only use so much memory (32 bits) to store their value and decimal position.
             
-        //     //.NET Core does have a more precise (64 bits) floating point type called `System.Double`
-        //     //or `double` in C#.
+            //.NET Core does have a more precise (64 bits) floating point type called `System.Double`
+            //or `double` in C#.
             
-        //     //Floating point numbers round values that are beyond their precision.
+            //Floating point numbers round values that are beyond their precision.
             
-        //     //The required precision for a given application is a major factor in choosing an appropriate
-        //     //number type.
-        //     //If no decimal precision is required, use `int`
-        //     //If up to 7 digits precision is acceptable, use `float`
-        //     //If up to 15 digits precision is acceptable, use `double`
-        //     //If greater precision is needed, consider `decimal`
-        // }
+            //The required precision for a given application is a major factor in choosing an appropriate
+            //number type.
+            //If no decimal precision is required, use `int`
+            //If up to 7 digits precision is acceptable, use `float`
+            //If up to 15 digits precision is acceptable, use `double`
+            //If greater precision is needed, consider `decimal`
+        }
 
         [Step(8)]
         public void FloatingPointMathIsWeird()
